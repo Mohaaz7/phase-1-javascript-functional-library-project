@@ -1,16 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
+<head>
+  <meta charset="utf-8">
+  <title>JS Functional Library</title>
+  <meta name="description" content="Functional JavaScript Lab in Learn.co Curriculum">
+  <meta name="author" content="Flatiron School">
 
-    <title>fi JS Functional Library</title>
-    <meta name="description" content="Functional JavaScript Lab in Learn.co Curriculum">
-    <meta name="author" content="Flatiron School">
+  <!-- Mocha CSS -->
+  <link rel="stylesheet" href="node_modules/mocha/mocha.css">
+</head>
+<body>
+  <!-- Mocha Test UI -->
+  <div id="mocha"></div>
 
-    <link rel="stylesheet" href="node_modules/mocha/mocha.css">
-  </head>
+  <!-- Mocha + Chai Scripts -->
+  <script src="node_modules/mocha/mocha.js"></script>
+  <script src="node_modules/chai/chai.js"></script>
+  <script src="node_modules/chai-spies/chai-spies.js"></script>
 
-  <body>
-    
-  </body>
+  <!-- Setup Mocha -->
+  <script>
+    mocha.setup('bdd');
+    const expect = chai.expect;
+    chai.use(chaiSpies);
+  </script>
+
+  <!-- Your Library Code -->
+  <script src="index.js"></script>
+
+  <!-- Your Test File -->
+  <script src="test/indexTest.js"></script>
+
+  <!-- Run the Tests -->
+  <script>
+    mocha.run();
+  </script>
+</body>
 </html>
